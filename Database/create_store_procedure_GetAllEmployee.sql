@@ -1,5 +1,5 @@
 CREATE PROCEDURE GetAllEmployee
 AS
 BEGIN
-    SELECT * FROM Employee;
+    SELECT * FROM Employee ORDER BY idx DESC;
 END;
