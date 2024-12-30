@@ -1,0 +1,5 @@
+CREATE PROCEDURE GetAllEmployee
+AS
+BEGIN
+    SELECT * FROM Employee;
+END;

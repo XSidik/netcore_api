@@ -1,0 +1,26 @@
+# Ignore .NET Core build results
+FirstAPI/bin/
+FirstAPI/obj/
+
+# Ignore user-specific files
+*.swp
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore build output
+*.dll
+*.exe
+*.app
+*.log
+*.pdb
+*.cache
+*.config
+*.csproj.user
+
+# Ignore other files
+.vscode/
+.idea/
+.env
+node_modules/

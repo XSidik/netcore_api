@@ -18,9 +18,9 @@ namespace FirstAPI.Repositories
         {
             return new Employee()
             {
-                Idx = (int)reader["Idx"],
-                Name = reader["Name"].ToString(),
-                Age = (int)reader["Age"]
+                Idx = (int)reader["idx"],
+                Name = reader["name"].ToString(),
+                Age = (int)reader["age"]
             };
         }
 
@@ -71,14 +71,14 @@ namespace FirstAPI.Repositories
             }
         }
 
-        public async Task InsUp(Employee data)
+        public async Task InsUp(InsOrUpEmployee data, int Id)
         {
             using (SqlConnection sql = new SqlConnection(_connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("InsertEmployee", sql))
+                using (SqlCommand cmd = new SqlCommand("InsertOrUpdateEmployee", sql))
                 {
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@idx", data.Idx));
+                    cmd.Parameters.Add(new SqlParameter("@idx", Id));
                     cmd.Parameters.Add(new SqlParameter("@name", data.Name));
                     cmd.Parameters.Add(new SqlParameter("@age", data.Age));
                     await sql.OpenAsync();
@@ -95,7 +95,7 @@ namespace FirstAPI.Repositories
                 using (SqlCommand cmd = new SqlCommand("DeleteEmployee", sql))
                 {
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@Id", Id));
+                    cmd.Parameters.Add(new SqlParameter("@id", Id));
                     await sql.OpenAsync();
                     await cmd.ExecuteNonQueryAsync();
                     return;

@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\xns24\\source\\repos\\FirstAPI\\FirstAPI\\FirstAPI.csproj": {}
+    "/media/mort/Mort/myProject/netcore_api/FirstAPI/FirstAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\xns24\\source\\repos\\FirstAPI\\FirstAPI\\FirstAPI.csproj": {
+    "/media/mort/Mort/myProject/netcore_api/FirstAPI/FirstAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xns24\\source\\repos\\FirstAPI\\FirstAPI\\FirstAPI.csproj",
+        "projectUniqueName": "/media/mort/Mort/myProject/netcore_api/FirstAPI/FirstAPI.csproj",
         "projectName": "FirstAPI",
-        "projectPath": "C:\\Users\\xns24\\source\\repos\\FirstAPI\\FirstAPI\\FirstAPI.csproj",
-        "packagesPath": "C:\\Users\\xns24\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xns24\\source\\repos\\FirstAPI\\FirstAPI\\obj\\",
+        "projectPath": "/media/mort/Mort/myProject/netcore_api/FirstAPI/FirstAPI.csproj",
+        "packagesPath": "/home/mort/.nuget/packages/",
+        "outputPath": "/media/mort/Mort/myProject/netcore_api/FirstAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\xns24\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/mort/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -51,10 +54,25 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[3.1.32, 3.1.32]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -63,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.404/RuntimeIdentifierGraph.json"
         }
       }
     }

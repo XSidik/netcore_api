@@ -26,7 +26,7 @@ namespace FirstAPI.Controllers
             return await _repository.GetAll();
         }
 
-        // GET api/Employee/1
+        // GET api/Employee/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<Employee>> Get(int id)
         {
@@ -37,18 +37,26 @@ namespace FirstAPI.Controllers
 
         // POST api/Employee
         [HttpPost]
-        public async Task Post([FromBody] Employee data)
+        public async Task Post([FromBody] InsOrUpEmployee data)
         {
-            await _repository.InsUp(data);
+            await _repository.InsUp(data, 0);
         }
 
-        // DELETE api/Employee/1
+         // PUT api/Employee/{id}
+        [HttpPut("{id}")]
+        public async Task Put([FromBody] InsOrUpEmployee data, int id)
+        {
+            await _repository.InsUp(data, id);
+        }
+
+        // DELETE api/Employee/{id}
         [HttpDelete("{id}")]
         public async Task Delete(int id)
         {
             await _repository.DeleteById(id);
         }
 
+        // GET api/Employee/GetName?name=example
         [HttpGet("GetName")]
         public async Task<ActionResult<Employee>> GetName(string name)
         {
