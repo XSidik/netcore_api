@@ -43,3 +43,11 @@ The API exposes the following endpoints:
 - `POST /api/Employee` - Create a new Employee
 - `PUT /api/Employee/{id}` - Update an existing Employee
 - `DELETE /api/Employee/{id}` - Delete an Employee
+
+
+## Note
+This application serves as the backend for the project.  
+It is related to the frontend project available at [learn_ajax](https://github.com/XSidik/learn_ajax.git).
+
+## Contact
+For any questions or feedback, please contact [nursidik.2427@gmail.com].

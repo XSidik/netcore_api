@@ -23,7 +23,12 @@ namespace FirstAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Employee>>> Get()
         {
-            return await _repository.GetAll();
+            // return await _repository.GetAll();
+            return Ok(new ApiResponse<IEnumerable<Employee>>(
+                    success: true,
+                    message: "Data retrieved successfully",
+                    data: await _repository.GetAll()
+                ));
         }
 
         // GET api/Employee/{id}
@@ -32,28 +37,51 @@ namespace FirstAPI.Controllers
         {
             var response = await _repository.GetById(id);
             if (response == null) { return NotFound(); }
-            return response;
+
+            return Ok(new ApiResponse<Employee>(
+                    success: true,
+                    message: "Data retrieved successfully",
+                    data: response
+                ));
         }
 
         // POST api/Employee
         [HttpPost]
-        public async Task Post([FromBody] InsOrUpEmployee data)
+        public async Task<OkObjectResult> Post([FromBody] InsOrUpEmployee data)
         {
             await _repository.InsUp(data, 0);
+
+            return Ok(new ApiResponse<string>(
+                    success: true,
+                    message: "Data inserted successfully",
+                    data: null
+                ));
         }
 
-         // PUT api/Employee/{id}
+        // PUT api/Employee/{id}
         [HttpPut("{id}")]
-        public async Task Put([FromBody] InsOrUpEmployee data, int id)
+        public async Task<OkObjectResult> Put([FromBody] InsOrUpEmployee data, int id)
         {
             await _repository.InsUp(data, id);
+
+            return Ok(new ApiResponse<string>(
+                    success: true,
+                    message: "Data updated successfully",
+                    data: null
+                ));
         }
 
         // DELETE api/Employee/{id}
         [HttpDelete("{id}")]
-        public async Task Delete(int id)
+        public async Task<OkObjectResult> Delete(int id)
         {
             await _repository.DeleteById(id);
+
+            return Ok(new ApiResponse<string>(
+                    success: true,
+                    message: "Data deleted successfully",
+                    data: null
+                ));
         }
 
         // GET api/Employee/GetName?name=example
@@ -61,7 +89,12 @@ namespace FirstAPI.Controllers
         public async Task<ActionResult<Employee>> GetName(string name)
         {
             var response = await _repository.GetByName(name);            
-            return response;
+
+            return Ok(new ApiResponse<Employee>(
+                    success: true,
+                    message: "Data retrieved successfully",
+                    data: response
+                ));
         }
     }
 }
