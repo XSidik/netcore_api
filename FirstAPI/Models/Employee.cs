@@ -13,4 +13,10 @@ namespace FirstAPI.Models
         public string Name { get; set; }
         public int Age { get; set; }
     }
+
+     public partial class InsOrUpEmployee
+    {        
+        public string Name { get; set; }
+        public int Age { get; set; }
+    }
 }

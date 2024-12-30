@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  first-api:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    ports:
+      - "5000:80"
+    volumes:
+      - ./publish:/app/publish:rw
+    networks:
+      - netcoreapi
+
+networks:
+  netcoreapi:
+    external: true
